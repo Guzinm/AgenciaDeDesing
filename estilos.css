@@ -1,0 +1,301 @@
+/* Reset e estrutura básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F9FAFB;
+    color: #1C1C1E;
+    font-family: 'Open Sans', sans-serif;
+    padding: 16px;
+    text-align: center;
+    font-size: 1rem;
+    max-width: 100%;
+}
+
+/* Tipografia */
+h1 {
+    font-size: 1.8rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3, h4, p, li, a {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+h1::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #4A90E2;
+    margin: 0 auto 8px auto;
+}
+
+/* Header */
+header {
+    margin-bottom: 20px;
+    background-color: #c5e6e3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px 0;
+}
+
+header nav ul {
+    background-color: #929dad;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    list-style-type: none;
+    padding: 8px 0;
+}
+
+img {
+    width: 300px;
+    margin: auto;
+}
+
+li a {
+    font-size: 1rem;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #1C1C1E;
+}
+
+a:hover {
+    font-style: italic;
+    color: #77777a;
+    cursor: pointer;
+}
+
+a:visited {
+    color: #353588;
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+article {
+    margin: 20px auto;
+}
+
+section:hover, article:hover {
+    transform: scale(1.025);
+}
+
+section, article {
+    border-radius: 15px;
+    margin-top: 20px;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+#home {
+    width: 100%;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.texto2 {
+    width: 100%;
+    align-self: flex-end;
+}
+
+.texto2 ul {
+    list-style-type: none;
+}
+
+#home h1, #sobre h4, #sobre h2 {
+    color: #3761d4;
+}
+
+#sobre {
+    background-color: #a1ecd357;
+}
+
+#sobre article {
+    background-color: rgba(86, 153, 211, 0.356);
+    border-radius: 15px;
+}
+
+#sobre ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    font-size: small;
+}
+
+#sobre ul li {
+    background-color: rgba(0, 255, 255, 0.322);
+    border-radius: 15px;
+    border: 1px solid rgb(196, 202, 255);
+    padding: 10px;
+}
+
+/* Depoimentos */
+#depoimentos {
+    background-color: #E8F0FE;
+    padding: 24px;
+}
+
+#depoimentos blockquote {
+    font-style: italic;
+    color: #333;
+    margin: 16px auto;
+    padding: 12px;
+    border-left: 4px solid #4A90E2;
+    max-width: 500px;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+#depoimentos cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Contato */
+#contato {
+    background-color: #DFF5F2;
+    padding: 24px;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: auto;
+}
+
+#contato input,
+#contato textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+#contato button {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contato button:hover {
+    background-color: #3761d4;
+}
+
+footer {
+    background-color: #7e7e8d;
+    color: white;
+    padding: 16px;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    body {
+        text-align: left;
+    }
+
+    img {
+        width: 25%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    header ul {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    main {
+        padding: 0 40px;
+    }
+
+    section {
+        width: 100%;
+        max-width: 100%;
+        padding: 40px 60px;
+        border-radius: 0;
+    }
+
+    #home {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    #home article {
+        font-size: 16px;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    #sobre ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #sobre ul li {
+        flex: 1 1 45%;
+    }
+
+    #servicos ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+
+    #servicos li {
+        flex: 1 1 30%;
+    }
+
+    #depoimentos blockquote {
+        max-width: 100%;
+    }
+
+    #contato form {
+        max-width: 600px;
+    }
+}
