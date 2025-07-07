@@ -3,20 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
 
-html {
     scroll-behavior: smooth;
-}
-
-body {
-    background-color: #F9FAFB;
-    color: #1C1C1E;
-    font-family: 'Open Sans', sans-serif;
-    padding: 16px;
-    text-align: center;
-    font-size: 1rem;
-    max-width: 100%;
 }
 
 /* Tipografia */
@@ -42,18 +30,26 @@ h1::before {
     margin: 0 auto 8px auto;
 }
 
+/* BEM APLICADO */
+
 /* Header */
-header {
-    margin-bottom: 20px;
+.header {
     background-color: #c5e6e3;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding: 16px 0;
 }
 
-header nav ul {
+.header__imagem {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+/*Nav*/
+.navegacao {
     background-color: #929dad;
+}
+
+.navegacao__lista {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -62,45 +58,55 @@ header nav ul {
     padding: 8px 0;
 }
 
-img {
-    width: 300px;
-    margin: auto;
-}
-
-li a {
+.navegacao__link {
     font-size: 1rem;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     color: #1C1C1E;
 }
 
-a:hover {
+.navegacao__link:hover {
     font-style: italic;
     color: #77777a;
     cursor: pointer;
 }
 
-a:visited {
+.navegacao__link:visited {
     color: #353588;
 }
 
 /* Main */
-main {
+.layout {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
 }
 
-article {
-    margin: 20px auto;
+.layout__section {
+    border-radius: 15px;
+    margin-top: 20px;
+    max-width: 600px;
+    box-shadow: 0 0 .5em rgba(80, 80, 80, 0.281);
+    padding: 16px;
+    background-color: white;
+    transition: transform 0.3s ease;
 }
 
-section:hover, article:hover {
+.layout__section:hover {
     transform: scale(1.025);
 }
 
-section, article {
+/* Home */
+.home {
+    width: 100%;
+    background-image: url('background.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.home__article {
+    margin: 20px auto;
     border-radius: 15px;
     margin-top: 20px;
     max-width: 600px;
@@ -110,58 +116,81 @@ section, article {
     transition: transform 0.3s ease;
 }
 
-#home {
-    width: 100%;
-    background-image: url('background.png');
-    background-size: cover;
-    background-position: center;
+.home__article:hover {
+    transform: scale(1.025);
 }
 
-.texto2 {
+.home__article--deslocado {
     width: 100%;
     align-self: flex-end;
 }
 
-.texto2 ul {
+.home__lista {
     list-style-type: none;
 }
 
-#home h1, #sobre h4, #sobre h2 {
+.home__titulo {
     color: #3761d4;
 }
 
-#sobre {
+/* Sobre */
+.sobre {
     background-color: #a1ecd357;
 }
 
-#sobre article {
-    background-color: rgba(86, 153, 211, 0.356);
-    border-radius: 15px;
+.sobre__titulo {
+    color: #3761d4;
 }
 
-#sobre ul {
+.sobre__article {
+    background-color: rgba(86, 153, 211, 0.356);
+    border-radius: 15px;
+
+    padding: .5em;
+}
+
+.sobre__lista {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align-items: center;
+    align-items: start;
     font-size: small;
 }
 
-#sobre ul li {
+.sobre__itens {
     background-color: rgba(0, 255, 255, 0.322);
     border-radius: 15px;
     border: 1px solid rgb(196, 202, 255);
     padding: 10px;
 }
 
+/* Servicos */
+.servicos {
+    text-align: center;
+}
+
+.servicos__lista {
+    list-style-type: none;
+}
+
+.servicos__itens {
+    text-align: start;
+
+    box-shadow: 0 0 .25em rgba(0, 0, 0, 0.144);
+    border-radius: 1em;
+
+    padding: 1em;
+    margin: 1em;
+}
+
 /* Depoimentos */
-#depoimentos {
+.depoimentos {
     background-color: #E8F0FE;
     padding: 24px;
 }
 
-#depoimentos blockquote {
+.depoimentos__comentarios {
     font-style: italic;
     color: #333;
     margin: 16px auto;
@@ -172,7 +201,7 @@ section, article {
     box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
-#depoimentos cite {
+.depoimentos__citacao {
     display: block;
     margin-top: 8px;
     font-size: 0.9rem;
@@ -180,12 +209,12 @@ section, article {
 }
 
 /* Contato */
-#contato {
+.contato {
     background-color: #DFF5F2;
     padding: 24px;
 }
 
-#contato form {
+.contato__formulario {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -193,8 +222,7 @@ section, article {
     margin: auto;
 }
 
-#contato input,
-#contato textarea {
+.contato__entrada {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -202,7 +230,7 @@ section, article {
     font-size: 1rem;
 }
 
-#contato button {
+.contato__botao {
     background-color: #4A90E2;
     color: white;
     border: none;
@@ -212,11 +240,12 @@ section, article {
     transition: background-color 0.3s ease;
 }
 
-#contato button:hover {
+.contato__botao:hover {
     background-color: #3761d4;
 }
 
-footer {
+/* Footer */
+.footer {
     background-color: #7e7e8d;
     color: white;
     padding: 16px;
@@ -224,78 +253,81 @@ footer {
 }
 
 @media (min-width: 768px) {
-    body {
-        text-align: left;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    header {
+    /* Header */
+    .header {
         flex-direction: column;
         align-items: center;
-        padding: 10px 20px;
     }
 
-    header nav {
+    /* Nav */
+    .navegacao {
         width: 100%;
     }
 
-    header ul {
+    .navegacao__lista {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-direction: row;
     }
 
-    main {
+    .navegacao__link {
+        font-size: 1.2em;
+    }
+
+    /* Main */
+    .layout {
         padding: 0 40px;
     }
 
-    section {
+    .layout__section {
         width: 100%;
         max-width: 100%;
         padding: 40px 60px;
         border-radius: 0;
     }
 
-    #home {
+    /* Home */
+    .home {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
     }
 
-    #home article {
+    .home__article {
         font-size: 16px;
         padding: 20px;
         margin: 20px;
     }
 
-    #sobre ul {
+    /* Sobre */
+    .sobre__lista {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 20px;
     }
 
-    #sobre ul li {
+    .sobre__itens {
         flex: 1 1 45%;
     }
 
-    #servicos ul {
+    /* Serviços */
+    .servicos {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 24px;
     }
 
-    #servicos li {
+    .servicos__itens {
         flex: 1 1 30%;
     }
 
-    #depoimentos blockquote {
+    /* Depoimentos */
+    .depoimentos__comentarios {
         max-width: 100%;
     }
 
-    #contato form {
+    /* Contato */
+    .contato__formulario {
         max-width: 600px;
     }
 }

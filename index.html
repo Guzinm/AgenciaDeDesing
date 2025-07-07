@@ -7,25 +7,23 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
-    <header>
-            <img src="logo.png" 
-     srcset="logoPC.png 600w, logo.png 1200w" 
-     sizes="(max-width: 768px) 300px, 600px">
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+            <img class="header__imagem" src="logo.png" srcset="logoPC.png 600w, logo.png 1200w" sizes="(max-width: 768px) 300px, 600px">
     </header>
+    <nav class="navegacao">
+        <ul class="navegacao__lista">
+            <li><a href="#home" class="navegacao__link">Home</a></li>
+            <li><a href="#sobre" class="navegacao__link">Sobre Nós</a></li>
+            <li><a href="#servicos" class="navegacao__link">Serviços</a></li>
+            <li><a href="#depoimentos" class="navegacao__link">Depoimentos</a></li>
+            <li><a href="#contato" class="navegacao__link">Contato</a></li>
+        </ul>
+    </nav>
 
-    <main>
-        <section id="home">
-            <article>
-                <h1>Transformando ideias em impacto visual</h1>
+    <main class="layout">
+        <section id="home" class="layout__section home">
+            <article class="home__article">
+                <h1 class="home__titulo">Transformando ideias em impacto visual</h1>
                 <h3>
                     Form Front Designs é a agência que une estratégia e criatividade para dar forma à sua marca.
                     Seja para criar um novo logo, desenvolver sua identidade visual ou redesenhar sua comunicação com o mundo,
@@ -35,9 +33,9 @@
                     na tela, no papel ou onde sua marca estiver.
                 </h3>
             </article>
-            <article class="texto2">
+            <article class="home__article home__article--deslocado">
                 <h1>O que fazemos?</h1>
-                <ul>
+                <ul class="home__lista">
                     <li>Identidade Visual</li>
                     <li>UX/UI para web e mobile</li>
                     <li>Social Media Design</li>
@@ -47,75 +45,75 @@
             </article>
         </section>
 
-        <section id="sobre">
-            <h2>Quem somos?</h2>
+        <section id="sobre" class="layout__section sobre">
+            <h2 class="sobre__titulo">Quem somos?</h2>
             <p>
                 Somos uma agência criativa focada em formas que comunicam, cores que marcam e designs que funcionam.
                 A Form Front nasceu da vontade de ir além do bonito — queremos o útil, o claro e o inesquecível.
             </p>
 
-            <h4>Nossa missão</h4>
+            <h4 class="sobre__titulo">Nossa missão</h4>
             <p>
                 Transformar ideias em experiências visuais memoráveis, unindo estética, função e propósito.
             </p>
 
-            <article>
+            <article class="sobre__article">
                 <h3>Diferenciais da Form Front Designs</h3>
-                <ul>
-                    <li><h4>Design centrado no usuário</h4><p>Nada de "olha como ficou bonito" — aqui, o foco é no que funciona.</p></li>
-                    <li><h4>Processo colaborativo</h4><p>A gente te escuta. Muito. Talvez até demais.</p></li>
-                    <li><h4>Entrega rápida sem perder a alma</h4><p>A pressa é inimiga da perfeição... mas a gente é amigo da organização.</p></li>
-                    <li><h4>Experiência multi-plataforma</h4><p>Do impresso ao digital, seu design onde for necessário.</p></li>
+                <ul class="sobre__lista">
+                    <li class="sobre__itens"><h4 class="sobre__titulo">Design centrado no usuário</h4><p>Nada de "olha como ficou bonito" — aqui, o foco é no que funciona.</p></li>
+                    <li class="sobre__itens"><h4 class="sobre__titulo">Processo colaborativo</h4><p>A gente te escuta. Muito. Talvez até demais.</p></li>
+                    <li class="sobre__itens"><h4 class="sobre__titulo">Entrega rápida sem perder a alma</h4><p>A pressa é inimiga da perfeição... mas a gente é amigo da organização.</p></li>
+                    <li class="sobre__itens"><h4 class="sobre__titulo">Experiência multi-plataforma</h4><p>Do impresso ao digital, seu design onde for necessário.</p></li>
                 </ul>
             </article>
         </section>
 
-        <section id="servicos">
+        <section id="servicos" class="layout__section servicos">
             <h1>Serviços</h1>
-            <ul>
-                <li>
-                    <h3>Identidade Visual Completa – “Forma Essencial”</h3>
+            <ul class="servicos__lista">
+                <li class="servicos__itens">
+                    <h3>Identidade Visual Completa - “Forma Essencial”</h3>
                     <p>Criamos do zero uma identidade visual que represente a alma da sua marca. Logo, paleta de cores, tipografia, aplicações em papelaria e redes sociais — tudo alinhado ao seu posicionamento.<br><br>
                     💡 Ideal para: empresas novas, rebrandings, influencers sérios (ou quase), e quem cansou do Canva.</p>
                 </li>
-                <li>
-                    <h3>Design de Interface – “Fronte Digital”</h3>
+                <li class="servicos__itens">
+                    <h3>Design de Interface - “Fronte Digital”</h3>
                     <p>UI/UX de alta conversão para apps, sites, landing pages e sistemas. Funcionalidade e beleza caminhando juntos, de mãos dadas, rumo ao coração (e bolso) do usuário.<br><br>
                     💡 Ideal para: startups, e-commerces, portais e devs que têm o código mas não a cara.</p>
                 </li>
-                <li>
-                    <h3>Design para Redes Sociais – “Feed com Forma”</h3>
+                <li class="servicos__itens">
+                    <h3>Design para Redes Sociais - “Feed com Forma”</h3>
                     <p>Criação de kits visuais e posts personalizados que elevam o nível do seu Instagram, TikTok ou LinkedIn. Templates editáveis, branding adaptado e consistência visual de verdade.<br><br>
                     💡 Ideal para: criadores de conteúdo, marcas pessoais, empresas com social media estressado.</p>
                 </li>
             </ul>
         </section>
 
-        <section id="depoimentos">
+        <section id="depoimentos" class="layout__section depoimentos">
             <h2>Depoimentos</h2>
-            <blockquote>
+            <blockquote class="depoimentos__comentarios">
                 “A Form Front transformou minha marca em algo vivo e memorável. Foi além do que imaginei!”
-                <cite>— Mariana S., CEO da BeViva</cite>
+                <cite class="depoimentos__citacao">— Mariana S., CEO da BeViva</cite>
             </blockquote>
-            <blockquote>
+            <blockquote class="depoimentos__comentarios">
                 “Trabalhar com a equipe foi uma experiência incrível. Criatividade, agilidade e empatia.”
-                <cite>— Rafael K., Desenvolvedor Full Stack</cite>
+                <cite class="depoimentos__citacao">— Rafael K., Desenvolvedor Full Stack</cite>
             </blockquote>
         </section>
 
-        <section id="contato">
+        <section id="contato" class="layout__section contato">
             <h2>Entre em Contato</h2>
-            <form>
-                <input type="text" placeholder="Seu nome" required>
-                <input type="email" placeholder="Seu email" required>
-                <textarea rows="4" placeholder="Sua mensagem"></textarea>
-                <button type="submit">Enviar</button>
+            <form class="contato__formulario">
+                <input class="contato__entrada" type="text" placeholder="Seu nome" required>
+                <input class="contato__entrada" type="email" placeholder="Seu email" required>
+                <textarea class="contato__entrada" rows="4" placeholder="Sua mensagem"></textarea>
+                <button class="contato__botao" type="submit">Enviar</button>
             </form>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; Todos os direitos reservados - Form Front Designs</p>
+    <footer class="footer">
+        <p>Copyright &copy; 2025 - Todos os direitos reservados - Form Front Designs</p>
     </footer>
 </body>
 </html>
