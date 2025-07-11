@@ -1,0 +1,21 @@
+@use 'variaveis';
+
+@mixin display-flex-padrao($direction: row, $justify: flex-start, $align: flex-start) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin box-shadow($parameters: 0 0 .35em variaveis.$cor-sombra) {
+    box-shadow: $parameters;
+}
+
+@mixin box-size($gap: 1em) {
+    padding: $gap;
+    margin: $gap;
+}
+
+@mixin border-radius($rad: 15px) {
+    border-radius: $rad;
+}

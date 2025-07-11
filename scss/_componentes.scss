@@ -1,0 +1,141 @@
+@use 'sass:color';
+
+@use 'variaveis';
+@use 'mixins';
+
+/*Menu*/
+.navegacao {
+    background-color: variaveis.$cor-navegacao;
+
+    &__lista {
+        @include mixins.display-flex-padrao(column,center,center);
+
+        list-style-type: none;
+
+        gap: variaveis.$gap-lista;
+        padding: variaveis.$gap-padrao 0;
+    }
+
+    &__link {
+        font-size: variaveis.$tamanho-texto;
+        font-family: variaveis.$fonte-padrao;
+        color: variaveis.$cor-link;
+        text-decoration: none;
+
+        &:hover {
+            color: color.adjust(variaveis.$cor-link, $lightness: 15%);
+            font-style: italic;
+            cursor: pointer;
+        }
+    }
+}
+
+/* Sobre */
+.sobre {
+    &__titulo {
+        color: variaveis.$cor-titulo;
+    }
+
+    &__article {
+        @include mixins.border-radius;
+        background-color: variaveis.$cor-cards;
+
+        padding: variaveis.$gap-padrao;
+    }
+
+    &__lista {
+        @include mixins.display-flex-padrao(column,center,start);
+        gap: variaveis.$gap-lista;
+        list-style-type: none;
+    }
+
+    &__itens {
+        background-color: variaveis.$cor-cards;
+        
+        @include mixins.box-shadow;
+        @include mixins.box-size(variaveis.$gap-lista);
+        @include mixins.border-radius;
+    }
+}
+
+/* Depoimentos */
+.depoimentos {
+    &__comentarios {
+        @include mixins.box-shadow;
+
+        color: variaveis.$cor-texto;
+        font-style: italic;
+
+        margin: variaveis.$gap-padrao auto;
+        padding: variaveis.$gap-padrao;
+        max-width: 500px;
+
+        border-left: 5px solid variaveis.$cor-card-decoration;
+        background-color: variaveis.$cor-depoimentos;
+    }
+
+    &__citacao {
+        display: block;
+        margin-top: 8px;
+        font-size: 0.9rem;
+        color: #666;
+    }
+}
+
+@mixin artigo{
+    &__article {
+        @include mixins.border-radius;
+        @include mixins.box-shadow;
+
+        margin: variaveis.$gap-padrao auto;
+        margin-top: variaveis.$gap-padrao;
+        padding: variaveis.$gap-padrao;
+
+        max-width: 600px;
+
+        background-color: variaveis.$cor-cards;
+        
+        transition: transform 0.3s ease;
+        &:hover {
+            transform: scale(1.025);
+        }
+    
+        &--deslocado {
+            width: 100%;
+            align-self: flex-end;
+        }
+    }
+}
+
+@mixin entrada{
+    &__formulario {
+        @include mixins.display-flex-padrao(column, center, none);
+        gap: variaveis.$gap-lista;
+
+        max-width: 400px;
+        margin: auto;
+    }
+
+    &__entrada {
+        @include mixins.border-radius(8px);
+        padding: variaveis.$gap-lista;
+        border: 1px solid variaveis.$cor-sombra;
+
+        font-family: inherit;
+        font-size: variaveis.$tamanho-texto;
+    }
+
+    &__botao {
+        @include mixins.border-radius(8px);
+        background-color: variaveis.$cor-card-decoration;
+        padding: variaveis.$gap-lista;
+        color: white;
+        border: none;
+        cursor: pointer;
+
+        transition: background-color 0.3s ease;
+        &:hover {
+            background-color: variaveis.$cor-titulo;
+        }
+    }
+}

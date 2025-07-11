@@ -1,0 +1,37 @@
+@use 'variaveis';
+
+/* Reset e estrutura básica */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: variaveis.$cor-body;
+}
+
+/* Tipografia */
+h1 {
+    font-size: variaveis.$tamanho-titulo;
+
+    /*bloco azul*/
+    &::before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 4px;
+        background-color: variaveis.$cor-card-decoration;
+        margin: 0 auto 8px auto;
+    }
+}
+
+h2 {
+    font-size: variaveis.$tamanho-subtitulo;
+}
+
+h3, h4, p, li, a {
+    font-size: variaveis.$tamanho-texto;
+}

@@ -1,0 +1,159 @@
+@use 'mixins';
+@use 'variaveis';
+@use 'componentes';
+
+/* Header */
+.header__imagem {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+/* Main */
+.layout {
+    @include mixins.display-flex-padrao(column,center,center);
+    gap: variaveis.$gap-padrao;
+
+    &__section {
+        @include mixins.box-shadow;
+        @include mixins.box-size;
+        @include mixins.border-radius;
+
+        margin-top: variaveis.$gap-padrao;
+        max-width: 600px;
+        background-color: variaveis.$cor-secoes;
+
+        transition: transform 0.3s ease;
+        &:hover {
+            transform: scale(1.025);
+        }
+    }
+}
+
+/* Home */
+.home {
+    width: 100%;
+    background-image: url('/imgs/background.png');
+    background-size: cover;
+    background-position: center;
+
+    @include componentes.artigo();
+
+    &__lista {
+        list-style-type: none;
+    }
+
+    &__titulo {
+        color: variaveis.$cor-titulo;
+    }
+}
+
+/* Servicos */
+.servicos {
+    text-align: center;
+
+    &__lista {
+        list-style-type: none;
+    }
+
+    &__itens {
+        @include mixins.box-shadow;
+        @include mixins.box-size;
+        @include mixins.border-radius;
+
+        background-color: variaveis.$cor-cards;
+
+        text-align: start;
+    }
+}
+
+/* Contato */
+.contato {
+    background-color: variaveis.$cor-contato;
+
+    @include componentes.entrada();
+}
+
+/* Footer */
+.footer {
+    padding: variaveis.$gap-padrao;
+
+    color:  white;
+    text-align: center;
+
+    background-color: variaveis.$cor-rodape;
+}
+
+@media (min-width: 768px) {
+    /* Header */
+    .header {
+        @include mixins.display-flex-padrao(column, center, center)
+    }
+
+    /* Nav */
+    .navegacao {
+        width: 100%;
+
+        &__lista {
+        @include mixins.display-flex-padrao(row, space-around, center)
+        }
+
+        &__link {
+            font-size: variaveis.$tamanho-subtitulo;
+        }
+    }
+
+    /* Main */
+    .layout {
+        padding: 0 variaveis.$gap-maior;
+
+        &__section {
+            width: 100%;
+            max-width: 100%;
+            padding: variaveis.$gap-maior calc(variaveis.$gap-padrao*3);
+            border-radius: 0;
+        }
+    }
+
+    /* Home */
+    .home {
+        @include mixins.display-flex-padrao(column,center,flex-end);
+
+        &__article {
+            font-size: variaveis.$tamanho-texto;
+            @include mixins.box-size(variaveis.$gap-padrao);
+        }
+    }
+
+    /* Sobre */
+    .sobre__lista {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: variaveis.$gap-padrao;
+    }
+
+    .sobre__itens {
+        flex: 1 1 45%;
+    }
+
+    /* Serviços */
+    .servicos {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: variaveis.$gap-padrao;
+        
+        &__itens {
+            flex: 1 1 30%;
+        }
+    }
+
+    /* Depoimentos */
+    .depoimentos__comentarios {
+        max-width: 100%;
+    }
+
+    /* Contato */
+    .contato__formulario {
+        max-width: 600px;
+    }
+}
